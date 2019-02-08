@@ -10,7 +10,7 @@ npm install v-emotion --save
 
 ## Usage
 
-**Client:**
+**Client/Server:**
 
 ```js
 import Vue from 'vue';
@@ -70,11 +70,9 @@ export default {
 </template>
 
 <script>
-import { css } from 'v-emotion';
-
 export default {
   data() {
-    const componentClass = css({
+    const componentClass = this.$emotion.css({
       color: 'red',
     });
 
@@ -82,4 +80,14 @@ export default {
   },
 }
 </script>
+```
+
+**SSR API**
+```js
+import {
+  hydrate,
+  renderStylesToString,
+  renderStylesToNodeStream,
+  extractCritical,
+} from 'v-emotion';
 ```

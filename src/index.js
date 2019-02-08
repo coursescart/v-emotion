@@ -1,8 +1,16 @@
-import { css } from 'emotion';
+import { css, hydrate } from 'emotion';
+import {
+  renderStylesToString,
+  renderStylesToNodeStream,
+  extractCritical,
+} from 'emotion-server';
 
 export default {
   install(Vue, { theme } = {}) {
     Vue.prototype.$emotion = {
+      css(styles, ...args) {
+        return css(styles, ...args);
+      },
       theme,
     };
 
@@ -14,4 +22,8 @@ export default {
 
 export {
   css,
+  hydrate,
+  renderStylesToString,
+  renderStylesToNodeStream,
+  extractCritical,
 };

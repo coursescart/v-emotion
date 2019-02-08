@@ -1,6 +1,6 @@
 {
   "name": "v-emotion",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A VueJs implementation of Emotion.",
   "author": "Javier Alonso Shannon",
   "license": "MIT",
@@ -26,7 +26,8 @@
     "prepare": "npm run clean && npm run build"
   },
   "dependencies": {
-    "emotion": "^10.0.7"
+    "emotion": "^10.0.7",
+    "emotion-server": "^10.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
