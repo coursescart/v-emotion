@@ -1,0 +1,38 @@
+{
+  "name": "v-emotion",
+  "version": "1.0.0",
+  "description": "A VueJs implementation of Emotion.",
+  "author": "Javier Alonso Shannon",
+  "license": "MIT",
+  "keywords": [
+    "vuejs",
+    "vue",
+    "emotion",
+    "css-in-js"
+  ],
+  "scripts": {
+    "clean": "rimraf lib es",
+    "build": "npm run build:commonjs && npm run build:es",
+    "build:es": "BABEL_ENV=es babel src -d es",
+    "build:commonjs": "BABEL_ENV=commonjs babel src -d lib",
+    "prepare": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "emotion": "^10.0.7",
+    "facepaint": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/preset-env": "^7.3.1",
+    "rimraf": "^2.6.3"
+  },
+  "main": "lib/install.js",
+  "module": "es/install.js",
+  "jsnext:main": "es/install.js",
+  "files": [
+    "lib",
+    "es"
+  ]
+}
